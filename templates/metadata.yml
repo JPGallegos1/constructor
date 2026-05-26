@@ -1,0 +1,22 @@
+id: <principle-slug>
+name: <Principle Name>
+status: draft
+version: 0.1.0
+category: <category>
+risk_level: medium
+summary: <One-sentence summary.>
+applies_to:
+  - <area>
+does_not_apply_to:
+  - <area>
+recommended_artifacts:
+  - adr
+  - rule
+  - checklist
+  - implementation-guide
+  - eval
+eval_status: experimental
+agent_triggers:
+  - <trigger>
+adoption_maturity: experimental
+related_principles: []

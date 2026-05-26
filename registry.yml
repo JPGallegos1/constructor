@@ -1,0 +1,17 @@
+version: 1
+principles:
+  - id: validate-data-at-system-boundaries-before-persistence
+    name: Validate Data at System Boundaries Before Persistence
+    status: draft
+    category: data-integrity
+    risk_level: high
+    path: principles/validate-data-at-system-boundaries-before-persistence/principle.md
+    metadata: principles/validate-data-at-system-boundaries-before-persistence/metadata.yml
+    summary: Any data that crosses a system boundary into persistent, external, shared, or long-lived storage must be validated before it is written.
+    recommended_artifacts:
+      - adr
+      - rule
+      - checklist
+      - implementation-guide
+      - eval
+    eval_status: experimental
