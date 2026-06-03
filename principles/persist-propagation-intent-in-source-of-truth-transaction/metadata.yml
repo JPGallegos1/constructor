@@ -1,0 +1,38 @@
+id: persist-propagation-intent-in-source-of-truth-transaction
+name: Persist Propagation Intent in the Source-of-Truth Transaction
+status: draft
+version: 0.1.0
+category: data-consistency
+risk_level: high
+summary: When a write must reach a second independent store, persist the intent to propagate inside the same transaction as the primary write and deliver it asynchronously with retries and idempotency, instead of dual-writing from application code.
+applies_to:
+  - cross-store-propagation
+  - memory
+  - search
+  - retrieval
+  - analytics
+  - event-stores
+  - external-integrations
+  - data-replication
+does_not_apply_to:
+  - single-store-writes
+  - best-effort-rebuildable-caches
+  - propagation-inside-a-single-shared-transaction
+  - pre-pmf-when-loss-is-a-documented-conscious-trade
+recommended_artifacts:
+  - adr
+  - rule
+  - checklist
+  - implementation-guide
+  - eval
+eval_status: experimental
+agent_triggers:
+  - writes to a second store after a primary write
+  - fire-and-forget dispatch in a write path
+  - dual writes to independent stores
+  - syncs to memory, vector, search, or analytics stores
+  - hand-rolled compensating delete instead of a transaction
+  - adds or modifies replication or sync flows
+adoption_maturity: experimental
+related_principles:
+  - validate-data-at-system-boundaries-before-persistence
