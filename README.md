@@ -64,21 +64,15 @@ docs/
 registry.yml
 ```
 
-## MVP Principle
+## Principles
 
-The first principle is:
+Current principles are listed in `registry.yml`.
 
-```txt
-Validate Data at System Boundaries Before Persistence
-```
+- [Validate Data at System Boundaries Before Persistence](principles/validate-data-at-system-boundaries-before-persistence/principle.md): validate data crossing system boundaries before writing it to persistent, external, shared, or long-lived storage.
+- [Persist Propagation Intent in the Source-of-Truth Transaction](principles/persist-propagation-intent-in-source-of-truth-transaction/principle.md): when a write must reach a second independent store, persist the propagation intent in the same transaction as the primary write and deliver it asynchronously with retries and idempotency.
+- [Version Persisted Data for Backward-Compatible Evolution](principles/version-persisted-data-for-backward-compatible-evolution/principle.md): persisted derived data carries an explicit schema version and is decoded tolerantly so new code can read old records as schemas evolve.
 
-Canonical source:
-
-```txt
-principles/validate-data-at-system-boundaries-before-persistence/principle.md
-```
-
-This principle is the pilot for validating whether the repository format can produce useful ADRs, agent rules, checklists, implementation guides, and experimental evals for real projects.
+These principles validate whether the repository format can produce useful ADRs, agent rules, checklists, implementation guides, and experimental evals for real projects.
 
 ## Status
 

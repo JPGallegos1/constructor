@@ -256,6 +256,17 @@ This principle can be adopted into projects as:
 - implementation guides;
 - evals, currently experimental.
 
+## Related Principles
+
+- `persist-propagation-intent-in-source-of-truth-transaction` — adjacent on the
+  propagation axis. This principle governs *whether data is valid before it is
+  written across a boundary*; that one governs *whether the intent to propagate a
+  committed write is durable and reprocessable*.
+- `version-persisted-data-for-backward-compatible-evolution` — complement across
+  time. This principle governs *whether persisted data is valid when written*;
+  that one governs *whether persisted derived data remains readable as code and
+  schemas evolve*.
+
 ## Rule of Thumb
 
 Do not let external or persistent systems become the first place where data quality problems are discovered.

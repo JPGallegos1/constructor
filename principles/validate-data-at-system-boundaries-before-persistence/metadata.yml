@@ -34,4 +34,6 @@ agent_triggers:
   - writes agent memory or reasoning artifacts
   - changes ownership, provenance, or visibility metadata
 adoption_maturity: experimental
-related_principles: []
+related_principles:
+  - persist-propagation-intent-in-source-of-truth-transaction
+  - version-persisted-data-for-backward-compatible-evolution

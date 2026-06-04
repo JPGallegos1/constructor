@@ -22,7 +22,22 @@ principles:
     risk_level: high
     path: principles/persist-propagation-intent-in-source-of-truth-transaction/principle.md
     metadata: principles/persist-propagation-intent-in-source-of-truth-transaction/metadata.yml
-    summary: When a write must reach a second independent store, persist the intent to propagate inside the same transaction as the primary write and deliver it asynchronously with retries and idempotency.
+    summary: When a write must reach a second independent store, persist the intent to propagate inside the same transaction as the primary write and deliver it asynchronously with retries and idempotency, instead of dual-writing from application code.
+    recommended_artifacts:
+      - adr
+      - rule
+      - checklist
+      - implementation-guide
+      - eval
+    eval_status: experimental
+  - id: version-persisted-data-for-backward-compatible-evolution
+    name: Version Persisted Data for Backward-Compatible Evolution
+    status: draft
+    category: architecture
+    risk_level: high
+    path: principles/version-persisted-data-for-backward-compatible-evolution/principle.md
+    metadata: principles/version-persisted-data-for-backward-compatible-evolution/metadata.yml
+    summary: Persisted derived data must carry an explicit schema version and be read tolerantly — branching on version, defaulting missing fields, migrating changed shapes, never crashing — so new code can read old records as the schema evolves.
     recommended_artifacts:
       - adr
       - rule

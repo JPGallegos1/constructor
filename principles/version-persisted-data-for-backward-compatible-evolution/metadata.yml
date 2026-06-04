@@ -1,0 +1,41 @@
+id: version-persisted-data-for-backward-compatible-evolution
+name: Version Persisted Data for Backward-Compatible Evolution
+status: draft
+version: 0.1.0
+category: architecture
+risk_level: high
+summary: Persisted derived data must carry an explicit schema version, and every reader must decode it tolerantly — branching on version, defaulting missing fields, migrating changed shapes, and never crashing — so new code can read old records as the schema evolves.
+applies_to:
+  - persistence
+  - schema-evolution
+  - serialization
+  - derived-data
+  - memory
+  - search
+  - retrieval
+  - analytics
+  - event-stores
+does_not_apply_to:
+  - raw-immutable-input-with-stable-shape
+  - short-lived-ui-state
+  - request-local-data
+  - fully-rebuildable-throwaway-stores
+recommended_artifacts:
+  - adr
+  - rule
+  - checklist
+  - implementation-guide
+  - eval
+eval_status: experimental
+agent_triggers:
+  - serializes derived data to a long-lived store
+  - persists an interpreter, parser, or normalization result
+  - adds, renames, splits, or changes the type of a persisted field
+  - writes a snapshot meant to be immutable history
+  - reads or deserializes persisted records written by older code
+  - reads open maps (Record<string, ...>) or JSONB without undefined guards
+  - introduces a new required field on an existing persisted type
+adoption_maturity: experimental
+related_principles:
+  - validate-data-at-system-boundaries-before-persistence
+  - persist-propagation-intent-in-source-of-truth-transaction
