@@ -245,6 +245,10 @@ This principle can be adopted into projects as:
   one governs *whether the cross-store effect propagates durably*. The
   hand-rolled compensating delete is the same "atomicity simulated in
   application code" antipattern one layer down.
+- `version-persisted-data-for-backward-compatible-evolution` — adjacent on the
+  time axis. This principle keeps two stores consistent by making propagation
+  durable; that one keeps persisted derived records readable as schemas and code
+  evolve.
 
 ## Rule of Thumb
 

@@ -36,3 +36,4 @@ agent_triggers:
 adoption_maturity: experimental
 related_principles:
   - validate-data-at-system-boundaries-before-persistence
+  - version-persisted-data-for-backward-compatible-evolution

@@ -5,7 +5,8 @@ The taxonomy helps humans and agents discover relevant principles.
 ## Categories
 
 - `data-integrity`: preserving data correctness, validity, ownership, and trust across boundaries.
-- `architecture`: shaping system boundaries, responsibilities, and long-term design decisions.
+- `data-consistency`: keeping related data in agreement across independent stores, including atomicity, propagation, replication, and idempotent delivery.
+- `architecture`: shaping system boundaries, responsibilities, evolvability, and long-term design decisions (including schema evolution and backward compatibility over time).
 - `security`: protecting access, authorization, privacy, and sensitive operations.
 - `reliability`: preventing failure modes and improving recovery, observability, and resilience.
 - `agent-behavior`: guiding how coding agents should reason, stop, plan, or implement.
